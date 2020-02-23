@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Andrew Schmidt",
+      "authorEmail": "Andrew.mkniger@gmail.com",
+      "authorUrl": "https://github.com/andrewschmidt-a"
+    }
+  }
+}
