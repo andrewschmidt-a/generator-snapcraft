@@ -86,6 +86,5 @@ module.exports = class extends Generator {
     execSync("git init")
     execSync("git add -A")
     execSync("git commit -am \"intital\"")
-    execSync("snapcraft")
   }
 };
