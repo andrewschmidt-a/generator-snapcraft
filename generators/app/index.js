@@ -82,10 +82,7 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.installDependencies({
-      bower: false,
-      npm: true
-    });
+    this.npmInstall();
     execSync("git init")
     execSync("git add -A")
     execSync("git commit -am \"intital\"")
