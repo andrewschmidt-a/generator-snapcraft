@@ -89,10 +89,10 @@ module.exports = class extends Generator {
 
   install() {
     this.npmInstall();
-    execSync("git init")
-    execSync("git add -A")
-    execSync("git commit -am \"intital\"")
-    execSync("ls -la")
-    execSync("chmod +x ./build_test.sh")
+    execSync("git init", {cwd: path.dirname(".")})
+    execSync("git add -A", {cwd: path.dirname(".")})
+    execSync("git commit -am \"initial\"", {cwd: path.dirname(".")})
+    execSync("ls -la", {cwd: path.dirname(".")})
+    execSync("chmod +x ./build_test.sh", {cwd: path.dirname(".")})
   }
 };
