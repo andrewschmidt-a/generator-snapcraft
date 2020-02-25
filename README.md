@@ -1,5 +1,5 @@
 # generator-snapcraft-yo-node [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Yoman generator for snapcraft node
+> Yoman generator for snapcraft
 
 ## Installation
 
@@ -7,21 +7,26 @@ First, install [Yeoman](http://yeoman.io) and generator-snapcraft-yo-node using 
 
 ```bash
 npm install -g yo
-npm install -g snapcraft-yo-node
+npm install -g generator-snapcraft
 ```
 
 Then generate your new project:
 
 ```bash
-yo snapcraft-yo-node
+mkdir new-project && cd new-project
+yo generator-snapcraft
 ```
 
-## Getting To Know Yeoman
+## Building your project
+You may need to install dependencies for snapcraft
+- Snapcraft (https://snapcraft.io/)
+- git (https://git-scm.com/)
+- multipass (https://multipass.run/)
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+Now you can run the sample script to build your new snap
+```bash
+bash ./build_test.sh
+```
 
 ## License
 

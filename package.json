@@ -1,6 +1,6 @@
 {
   "name": "generator-snapcraft",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Yoman generator for snapcraft node",
   "homepage": "snapcraft.io",
   "author": {
