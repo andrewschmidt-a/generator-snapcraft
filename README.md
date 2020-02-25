@@ -3,7 +3,7 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-snapcraft-yo-node using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-snapcraft using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -33,8 +33,8 @@ bash ./build_test.sh
 MIT © [Andrew Schmidt](https://github.com/andrewschmidt-a)
 
 
-[npm-image]: https://badge.fury.io/js/generator-snapcraft-yo-node.svg
-[npm-url]: https://npmjs.org/package/generator-snapcraft-yo-node
+[npm-image]: https://badge.fury.io/js/generator-snapcraft.svg
+[npm-url]: https://npmjs.org/package/generator-snapcraft
 [travis-image]: https://travis-ci.com/andrewschmidt-a/generator-snapcraft-yo-node.svg?branch=master
 [travis-url]: https://travis-ci.com/andrewschmidt-a/generator-snapcraft-yo-node
 [daviddm-image]: https://david-dm.org/andrewschmidt-a/generator-snapcraft-yo-node.svg?theme=shields.io
