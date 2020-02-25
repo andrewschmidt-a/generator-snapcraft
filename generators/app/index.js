@@ -79,6 +79,12 @@ module.exports = class extends Generator {
     var content = Mustache.render(fs.readFileSync(path.resolve(this.templatePath(this.props.language), "snapcraft.yaml")).toString(), this.props)
     
     this.fs.write(filename, content)
+
+    // build_test.sh
+    var filename = path.resolve(this.contextRoot, "build_test.sh")
+    var content = Mustache.render(fs.readFileSync(path.resolve(this.templatePath(this.props.language), "build_test.sh")).toString(), this.props)
+    
+    this.fs.write(filename, content)
   }
 
   install() {
