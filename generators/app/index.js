@@ -87,6 +87,7 @@ module.exports = class extends Generator {
       npm: true
     });
     execSync("git init")
+    execSync("git add -A")
     execSync("git commit -am \"intital\"")
   }
 };

@@ -1,0 +1,22 @@
+name: "{{name}}"
+version: git
+summary: Command line weather tool.
+description: |
+  Get current weather:-
+    $ "{{name}}"
+  Get current weather in metric units
+    $ "{{name}}" --metric
+  Get current weather in imperial units
+    $ "{{name}}" --imperial
+
+confinement: devmode
+base: core18
+
+parts:
+  wethr:
+    plugin: nodejs
+    source: .
+
+apps:
+  wethr:
+    command: "{{name}}"
