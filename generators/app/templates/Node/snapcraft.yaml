@@ -13,10 +13,10 @@ confinement: devmode
 base: core18
 
 parts:
-  wethr:
+  {{name}}:
     plugin: nodejs
     source: .
 
 apps:
-  wethr:
+  {{name}}:
     command: "{{name}}"
