@@ -1,5 +1,5 @@
 {
-  "name": "generator-snapcraft-yo-node",
+  "name": "generator-snapcraft",
   "version": "0.0.0",
   "description": "Yoman generator for snapcraft node",
   "homepage": "snapcraft.io",
@@ -39,8 +39,9 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "mustache": "^4.0.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
@@ -81,6 +82,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "andrewschmidt-a/generator-snapcraft-yo-node",
+  "repository": "andrewschmidt-a/generator-snapcraft",
   "license": "MIT"
 }

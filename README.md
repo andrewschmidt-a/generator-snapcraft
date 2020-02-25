@@ -7,7 +7,7 @@ First, install [Yeoman](http://yeoman.io) and generator-snapcraft-yo-node using 
 
 ```bash
 npm install -g yo
-npm install -g generator-snapcraft-yo-node
+npm install -g snapcraft-yo-node
 ```
 
 Then generate your new project:

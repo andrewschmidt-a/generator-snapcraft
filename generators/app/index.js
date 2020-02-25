@@ -2,6 +2,10 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
+const path = require('path')
+const fs = require('fs')
+const Mustache = require("mustache")
+const { execSync } = require('child_process');
 
 module.exports = class extends Generator {
   prompting() {
@@ -9,14 +13,46 @@ module.exports = class extends Generator {
     this.log(
       yosay(`Welcome to the praiseworthy ${chalk.red('generator-snapcraft-yo-node')} generator!`)
     );
+    this.snapname = "new-snap"
+    this.lang = "Node"
+    this.summary = "My new snap"
+    this.description = "This is a generated snap project"
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
-      }
+        type: 'input',
+        name: 'name',
+        message: 'Your snap name',
+        default: this.snapname
+      },
+      {
+        type: 'list',
+        name: 'language',
+        message: 'Language',
+        default: this.lang,
+        choices:[
+          "Node",
+          "Python"
+        ]
+      },
+      {
+        type: 'input',
+        name: 'summary',
+        message: 'Summary of your snap',
+        default: this.summary
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Your snap description',
+        default: this.description
+      },
+      {
+        type: 'input',
+        name: 'author',
+        message: 'Author',
+        default: this.author
+      },
     ];
 
     return this.prompt(prompts).then(props => {
@@ -26,13 +62,31 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    console.log(this.props)
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath(this.props.language),
+      this.contextRoot
     );
+
+    // package.json
+    var filename = path.resolve(this.contextRoot, "package.json")
+    var content = Mustache.render(fs.readFileSync(path.resolve(this.templatePath(this.props.language), "package.json")).toString(), this.props)
+
+    this.fs.write(filename, content)
+
+    // snapcraft.yaml
+    var filename = path.resolve(this.contextRoot, "snapcraft.yaml")
+    var content = Mustache.render(fs.readFileSync(path.resolve(this.templatePath(this.props.language), "snapcraft.yaml")).toString(), this.props)
+    
+    this.fs.write(filename, content)
   }
 
   install() {
-    this.installDependencies();
+    this.installDependencies({
+      bower: false,
+      npm: true
+    });
+    execSync("git init")
+    execSync("git commit -am \"intital\"")
   }
 };
